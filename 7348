@@ -1,0 +1,19 @@
+chance     = 73.48
+balancediv = 100000
+okdiv      = 2000
+basebet    = balance/balancediv
+nextbet    = basebet
+bethigh    = true
+
+resetstats()
+function dobet()
+    if (win) then
+        nextbet=previousbet*1.5
+        if (previousbet>=(balance/okdiv)) then
+            basebet = balance/balancediv
+            nextbet = basebet
+        end
+    else
+        nextbet=previousbet*3.5
+    end
+end
